@@ -7,5 +7,5 @@
 - run following code
 
 ```bash
-$ docker run -ti --rm --volume="$(pwd)":/bot zixia/wechaty mybot.js
+$ docker run -ti --rm --volume="$(pwd)":/bot zixia/wechaty FILENAME
 ```
