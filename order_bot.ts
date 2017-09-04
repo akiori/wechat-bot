@@ -29,7 +29,7 @@ function getRandomInt(min, max) {
 }
 
 function randomChoices() {
-    return vag_choice[getRandomInt(0, vag_choice.length)].txt
+    return xixi_choice[getRandomInt(0, xixi_choice.length)].txt
 }
 
 Wechaty.instance()
@@ -41,21 +41,22 @@ Wechaty.instance()
     .on('login',  user => console.log(`User ${user.name()} logined`))
     .on('message', async m => {
         try {
-            const vagRoom = await Room.find({topic: /预备役部队|for one night/})
+            const vagRoom = await Room.find({topic: /约饭选择测试/})
             console.log(vagRoom)
-            if (vagRoom
+            if (
+                vagRoom
                 && m.room().topic() === vagRoom.topic()
                 && m.mentioned()
                 && /马哥翔神郭博梅博琦神真爱粉|aki/.test(m.content())
                 && /吃/.test(m.content())
                 // && !m.self()
-            )
+                )
             {
-                await m.say(`今天我们吃：${randomChoices()}\nfrom Dirac sea`)
-                log.info('Bot', 'REPLY: 我们今天吃：${randomChoices()}')
+            await m.say(`今天我们吃：${randomChoices()}\nfrom Dirac sea`)
+            log.info('Bot', 'REPLY: 我们今天吃：${randomChoices()}')
             }
-
-        } catch (e) {
+        }
+        catch (e) {
             log.error('Bot', 'on(message) exception: %s' , e)
         }
     })
