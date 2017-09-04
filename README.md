@@ -15,6 +15,6 @@ $ docker run -ti --rm --volume="$(pwd)":/bot zixia/wechaty FILENAME
  - In Windows OS, you may come across 'firewall detected' if your project is located in other drives.
  - The solution is (in Powershell commands (run as administrator))
 ```bash   
-\> Disable-NetAdapterBinding -Name "vEthernet (DockerNAT)" -ComponentID ms_server
-\> Enable-NetAdapterBinding -Name "vEthernet (DockerNAT)" -ComponentID ms_server
+C:\WINDOWS\system32 > Disable-NetAdapterBinding -Name "vEthernet (DockerNAT)" -ComponentID ms_server
+C:\WINDOWS\system32 > Enable-NetAdapterBinding -Name "vEthernet (DockerNAT)" -ComponentID ms_server
 ```
